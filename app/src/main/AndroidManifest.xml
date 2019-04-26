@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.myapplicationdev.android.pd3">
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".exercises" />
+        <activity android:name=".dumbbellbicepcurls" />
+        <activity android:name=".hammercurls" />
+        <activity android:name=".dumbbellsqueezepress" />
+        <activity android:name=".inclinebenchpress" />
+        <activity android:name=".singlearmdumbbellrow" />
+        <activity android:name=".widerow" />
+        <activity android:name=".ending" />
+        <activity android:name=".bicepexercises">
+        </activity>
+        <activity android:name=".startbicepcurls"></activity>
+        <activity android:name=".startsqueezepress"></activity>
+        <activity android:name=".backexercises"></activity>
+        <activity android:name=".chestexercises"></activity>
+        <activity android:name=".startbenchpress"></activity>
+        <activity android:name="startwiderow"></activity>
+        <activity android:name=".startdumbbellrow"></activity>
+        <activity android:name=".starthammercurls"></activity>
+    </application>
+
+</manifest>

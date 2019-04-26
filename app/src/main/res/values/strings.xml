@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">PD3</string>
+    <string name="title">Welcome To XFitness</string>
+    <string name="ready">Are you ready for your workout?</string>
+    <string name="go">Lets go!</string>
+    <string name="bicep">Bicep Workout</string>
+    <string name="chest">Chest Workout</string>
+    <string name="back">Back Workout</string>
+    <string name="ex1">Dumbbell Bicep Curls</string>
+    <string name="ex2">Hammer Curls</string>
+    <string name="ex3">Dumbbell Squeeze Press</string>
+    <string name="ex4">Incline Bench Press</string>
+    <string name="ex5">Single-Arm Dumbbell Row</string>
+    <string name="ex6">Wide Row</string>
+    <string name="target1">Focus: Brachialis and  Brachioradialis</string>
+    <string name="target2">Focus: Pecs,Building functional strength and hypertrophy in the chest</string>
+    <string name="target3">Focus: Clavicular head of the pectoralis major and upper portion of your chest</string>
+    <string name="target4">Focus:Latissimus dorsi (lats)and the entire back</string>
+    <string name="target5">Focus: Upper back and include more of the trapezoid, rhomboid and rear deltoid muscles</string>
+    <string name="eq1">Equipments: Dumbbell</string>
+    <string name="end">End Workout</string>
+    <string name="click">Click here to watch video</string>
+    <string name="next">Next</string>
+    <string name="home">Home</string>
+    <string name="ended">You have ended your workout for today. Good Job! Hope you liked our guide!</string>
+    <string name="timer">Start</string>
+    <string name="start">Start Workout</string>
+
+
+
+</resources>

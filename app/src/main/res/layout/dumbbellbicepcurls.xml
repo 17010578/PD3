@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ADD8E6"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textViewBicep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ex1"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageViewBicep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:srcCompat="@drawable/_main_cbcurl" />
+
+    <TextView
+        android:id="@+id/textViewTarget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/target1"
+        android:textColor="	#DC143C"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textViewEquipments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/eq1"
+        android:textColor="	#DC143C"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/buttonStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/start" />
+</LinearLayout>

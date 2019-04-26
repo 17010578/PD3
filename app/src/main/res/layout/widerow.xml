@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ADD8E6"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textViewBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ex6"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        app:srcCompat="@drawable/download8" />
+
+    <TextView
+        android:id="@+id/textViewTarget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/target5"
+        android:textColor="	#DC143C"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textViewEquipments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/eq1"
+        android:textColor="	#DC143C"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textViewOnline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/click"
+        android:textAllCaps="true"
+        android:textColor="	#800000"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold|italic" />
+
+    <Button
+        android:id="@+id/buttonEnd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/end" />
+</LinearLayout>
