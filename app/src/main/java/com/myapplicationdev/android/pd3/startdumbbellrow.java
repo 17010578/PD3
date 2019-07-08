@@ -7,7 +7,9 @@ import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.MediaController;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 public class startdumbbellrow extends AppCompatActivity {
 
@@ -15,6 +17,8 @@ public class startdumbbellrow extends AppCompatActivity {
     Button timer;
     TextView tvOnline;
     Button btnEnd;
+    Button btnBack;
+    VideoView videoView;
 
     CountDownTimer countdown;
     long time = 60000;
@@ -25,27 +29,36 @@ public class startdumbbellrow extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.startdumbbellrow);
 
-
-
         timertext = findViewById(R.id.countdown_text);
         timer = findViewById(R.id.timer);
-        tvOnline = findViewById(R.id.textViewOnline);
         btnEnd = findViewById(R.id.buttonEnd);
+        btnBack = findViewById(R.id.buttonBack);
+        videoView = findViewById(R.id.videoViewOneArm);
+
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.one_arm;
+        Uri uri = Uri.parse(videoPath);
+        videoView.setVideoURI(uri);
+
+        MediaController mediaController = new MediaController(this);
+        videoView.setMediaController(mediaController);
+        mediaController.setAnchorView(videoView);
 
         Intent intentReceived = getIntent();
 
+        setTitle("Dumbbell Row");
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), singlearmdumbbellrow.class);
+                startActivity(intent);
+            }
+        });
 
         timer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
             startStop();
-            }
-        });
-        tvOnline.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent. ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=pYcpY20QaE8"));
-                startActivity(intent);
             }
         });
 
@@ -54,6 +67,7 @@ public class startdumbbellrow extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), exercises.class);
                 startActivity(intent);
+
             }
         });
 

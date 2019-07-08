@@ -7,7 +7,9 @@ import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.MediaController;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 public class startbicepcurls extends AppCompatActivity {
 
@@ -15,6 +17,8 @@ public class startbicepcurls extends AppCompatActivity {
     Button timer;
     TextView tvOnline;
     Button btnEnd;
+    VideoView vw;
+    Button btnBack;
 
     CountDownTimer countdown;
     long time = 60000;
@@ -25,27 +29,37 @@ public class startbicepcurls extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.startbicepcurls);
 
-
-
         timertext = findViewById(R.id.countdown_text);
         timer = findViewById(R.id.timer);
-        tvOnline = findViewById(R.id.textViewOnline);
         btnEnd = findViewById(R.id.buttonEnd);
+        vw = findViewById(R.id.videoView);
+        btnBack = findViewById(R.id.buttonBack);
+
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.bicep_curls;
+        Uri uri = Uri.parse(videoPath);
+        vw.setVideoURI(uri);
+
+        MediaController mediaController = new MediaController(this);
+        vw.setMediaController(mediaController);
+        mediaController.setAnchorView(vw);
+
 
         Intent intentReceived = getIntent();
 
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), dumbbellbicepcurls.class);
+                startActivity(intent);
+            }
+        });
+
+        setTitle("Dumbbell Bicep Curls");
 
         timer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
             startStop();
-            }
-        });
-        tvOnline.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent. ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=XE_pHwbst04"));
-                startActivity(intent);
             }
         });
 
@@ -106,5 +120,7 @@ public class startbicepcurls extends AppCompatActivity {
 
         timertext.setText(timeLeft);
     }
+
+
 
 }

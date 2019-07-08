@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ADD8E6"
+    android:background="@drawable/background"
     android:orientation="vertical">
 
     <RadioGroup
@@ -16,6 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textSize="30sp"
             android:text="@string/ex3" />
 
         <RadioButton
@@ -23,7 +24,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textSize="30sp"
             android:text="@string/ex4" />
 
     </RadioGroup>
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_start"
+        android:layout_marginTop="500dp"
+        android:text="@string/prev" />
 </LinearLayout>

@@ -3,57 +3,60 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ADD8E6"
+    android:background="@drawable/background"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textViewBicep"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/ex2"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/imageViewHammerCurls"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="false"
-        app:srcCompat="@drawable/download4" />
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/countdown_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="1:00"
-        android:textAlignment="center"
-        android:textSize="50sp" />
+        <VideoView
+            android:id="@+id/videoViewHammerCurl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp" />
 
-    <Button
-        android:id="@+id/timer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="10dp"
-        android:text="@string/timer" />
+    </FrameLayout>
 
-    <TextView
-        android:id="@+id/textViewOnline"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/click"
-        android:textAllCaps="true"
-        android:textColor="	#800000"
-        android:textSize="18sp"
-        android:textStyle="bold|italic" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/buttonEnd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="@string/end" />
+        <TextView
+            android:id="@+id/countdown_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1:00"
+            android:textAlignment="center"
+            android:textSize="50sp" />
+
+        <Button
+            android:id="@+id/timer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_start"
+            android:text="@string/timer" />
+
+        <Button
+            android:id="@+id/buttonEnd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_start"
+            android:text="@string/end" />
+
+        <Button
+            android:id="@+id/buttonBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_start"
+            android:text="@string/prev" />
+    </LinearLayout>
+
 </LinearLayout>

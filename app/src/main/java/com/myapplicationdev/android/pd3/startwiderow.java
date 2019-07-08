@@ -7,7 +7,9 @@ import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.MediaController;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 public class startwiderow extends AppCompatActivity {
 
@@ -15,6 +17,8 @@ public class startwiderow extends AppCompatActivity {
     Button timer;
     TextView tvOnline;
     Button btnEnd;
+    Button btnBack;
+    VideoView videoView;
 
     CountDownTimer countdown;
     long time = 60000;
@@ -23,28 +27,39 @@ public class startwiderow extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.widerow);
-
-
+        setContentView(R.layout.startwiderow);
 
         timertext = findViewById(R.id.countdown_text);
         timer = findViewById(R.id.timer);
-        tvOnline = findViewById(R.id.textViewOnline);
         btnEnd = findViewById(R.id.buttonEnd);
+        btnBack = findViewById(R.id.buttonBack);
+        videoView = findViewById(R.id.videoViewWideRow);
+
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.wide_row;
+        Uri uri = Uri.parse(videoPath);
+        videoView.setVideoURI(uri);
+
+        MediaController mediaController = new MediaController(this);
+        videoView.setMediaController(mediaController);
+        mediaController.setAnchorView(videoView);
+
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), widerow.class);
+                startActivity(intent);
+            }
+        });
+
         Intent intentReceived = getIntent();
 
+        setTitle("Wide Row");
 
         timer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            startStop();
-            }
-        });
-        tvOnline.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent. ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=LktGPg-AkvY"));
-                startActivity(intent);
+                startStop();
             }
         });
 
@@ -71,8 +86,8 @@ public class startwiderow extends AppCompatActivity {
         countdown = new CountDownTimer(time,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-            time = millisUntilFinished;
-            updateTimer();
+                time = millisUntilFinished;
+                updateTimer();
             }
 
             @Override
@@ -105,5 +120,7 @@ public class startwiderow extends AppCompatActivity {
 
         timertext.setText(timeLeft);
     }
+
+
 
 }

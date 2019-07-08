@@ -7,7 +7,9 @@ import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.MediaController;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 public class startbenchpress extends AppCompatActivity {
 
@@ -15,6 +17,8 @@ public class startbenchpress extends AppCompatActivity {
     Button btnEnd;
     Button timer;
     TextView tvOnline;
+    VideoView videoView;
+    Button btnBack;
 
     CountDownTimer countdown;
     long time = 60000;
@@ -25,15 +29,31 @@ public class startbenchpress extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.startbenchpress);
 
-
-
         timertext = findViewById(R.id.countdown_text);
         timer = findViewById(R.id.timer);
-        tvOnline = findViewById(R.id.textViewOnline);
         btnEnd = findViewById(R.id.buttonEnd);
+        videoView = findViewById(R.id.videoViewBenchPress);
+        btnBack = findViewById(R.id.buttonBack);
+
+            String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.bench_press;
+            Uri uri = Uri.parse(videoPath);
+            videoView.setVideoURI(uri);
+
+            MediaController mediaController = new MediaController(this);
+            videoView.setMediaController(mediaController);
+            mediaController.setAnchorView(videoView);
 
         Intent intentReceived = getIntent();
 
+        setTitle("Incline Bench Press");
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), inclinebenchpress.class);
+                startActivity(intent);
+            }
+        });
 
         timer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,14 +61,6 @@ public class startbenchpress extends AppCompatActivity {
             startStop();
             }
         });
-        tvOnline.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent. ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=SHsUIZiNdeY"));
-                startActivity(intent);
-            }
-        });
-
 
         btnEnd.setOnClickListener(new View.OnClickListener() {
             @Override

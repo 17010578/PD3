@@ -14,24 +14,30 @@ public class singlearmdumbbellrow extends AppCompatActivity {
     TextView tvTarget;
     TextView tvEquipments;
     TextView tvOnline;
-    Button buttonStart;
+    Button buttonStart, buttonBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.singlearmdumbbellrow);
 
-
-
         tvTarget = findViewById(R.id.textViewTarget);
         tvBack = findViewById(R.id.textViewBack);
         tvEquipments = findViewById(R.id.textViewEquipments);
-        tvOnline = findViewById(R.id.textViewOnline);
         buttonStart = findViewById(R.id.buttonStart);
+        buttonBack = findViewById(R.id.buttonBack);
 
         Intent intentReceived = getIntent();
 
+        setTitle("Single Arm Dumbbell Row");
 
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(),backexercises.class);
+                startActivity(intent);
+            }
+        });
 
         buttonStart.setOnClickListener(new View.OnClickListener() {
             @Override

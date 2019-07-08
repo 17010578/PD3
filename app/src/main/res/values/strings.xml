@@ -3,9 +3,9 @@
     <string name="title">Welcome To XFitness</string>
     <string name="ready">Are you ready for your workout?</string>
     <string name="go">Lets go!</string>
-    <string name="bicep">Bicep Workout</string>
-    <string name="chest">Chest Workout</string>
-    <string name="back">Back Workout</string>
+    <string name="bicep">Bicep Workouts</string>
+    <string name="chest">Chest Workouts</string>
+    <string name="back">Back Workouts</string>
     <string name="ex1">Dumbbell Bicep Curls</string>
     <string name="ex2">Hammer Curls</string>
     <string name="ex3">Dumbbell Squeeze Press</string>
@@ -23,8 +23,9 @@
     <string name="next">Next</string>
     <string name="home">Home</string>
     <string name="ended">You have ended your workout for today. Good Job! Hope you liked our guide!</string>
-    <string name="timer">Start</string>
+    <string name="timer">Begin Workout</string>
     <string name="start">Start Workout</string>
+    <string name="prev">Back</string>
 
 
 

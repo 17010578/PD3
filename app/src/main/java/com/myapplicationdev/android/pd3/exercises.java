@@ -22,8 +22,6 @@ public class exercises extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.exercises);
 
-
-
         tvBack = findViewById(R.id.textViewBack);
         tvBicep = findViewById(R.id.textViewBicep);
         tvChest = findViewById(R.id.textViewChest);
@@ -31,9 +29,7 @@ public class exercises extends AppCompatActivity {
 
         Intent intentReceived = getIntent();
 
-//        registerForContextMenu(tvBack);
-//        registerForContextMenu(tvBicep);
-//        registerForContextMenu(tvChest);
+        setTitle("Workouts");
 
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override

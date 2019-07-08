@@ -3,12 +3,13 @@ package com.myapplicationdev.android.pd3;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
 
 public class backexercises extends AppCompatActivity {
 
-    Button btnOk;
+    Button btnBack;
     RadioGroup rdg;
 
     @Override
@@ -17,23 +18,18 @@ public class backexercises extends AppCompatActivity {
         setContentView(R.layout.backexercises);
 
         rdg = findViewById(R.id.radioGroupBack);
+        btnBack = findViewById(R.id.buttonBack);
 
-//        btnOk.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //Get the RadioGroup object
-//                RadioGroup rg = findViewById(R.id.radioGroupBicep);
-//
-//                //Get the Id of the selected radio button in the RadioGroup
-//                int selectedButtonID = rg.getCheckedRadioButtonId();
-//
-//                //Get the radio button from the id we had gotton above
-//                RadioButton rb = findViewById(selectedButtonID);
-//
-//                //Show a toast that displays the text on the selected radio buttons
-//
-;//            }
-//        });
+
+        setTitle("Back Exercises");
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(),exercises.class);
+                startActivity(intent);
+            }
+        });
 
         rdg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override

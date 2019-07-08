@@ -13,28 +13,27 @@ public class widerow extends AppCompatActivity {
     TextView tvBack;
     TextView tvTarget;
     TextView tvEquipments;
-    TextView tvOnline;
-    Button buttonStart;
+    Button buttonStart, buttonBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.widerow);
 
-
-
-        tvTarget = findViewById(R.id.textViewTarget);
+        tvTarget = findViewById(R.id.textViewTarget3);
         tvBack = findViewById(R.id.textViewBack);
-        tvEquipments = findViewById(R.id.textViewEquipments);
-        tvOnline = findViewById(R.id.textViewOnline);
-        buttonStart = findViewById(R.id.buttonStart);
+        tvEquipments = findViewById(R.id.textViewEquipments3);
+        buttonStart = findViewById(R.id.buttonEnd);
+        buttonBack = findViewById(R.id.buttonBack);
 
         Intent intentReceived = getIntent();
 
-        tvOnline.setOnClickListener(new View.OnClickListener() {
+        setTitle("Wide Row");
+
+        buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent. ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=LktGPg-AkvY"));
+                Intent intent = new Intent(getBaseContext(),backexercises.class);
                 startActivity(intent);
             }
         });
@@ -46,8 +45,7 @@ public class widerow extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
+
 
 }

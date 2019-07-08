@@ -14,22 +14,30 @@ public class dumbbellsqueezepress extends AppCompatActivity {
     TextView tvTarget;
     TextView tvEquipments;
     TextView tvOnline;
-    Button buttonStart;
+    Button buttonStart, buttonBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dumbbellsqueezepress);
 
-
-
         tvTarget = findViewById(R.id.textViewTarget3);
         tvChest = findViewById(R.id.textViewChest);
         tvEquipments = findViewById(R.id.textViewEquipments3);
         buttonStart = findViewById(R.id.buttonStart);
+        buttonBack = findViewById(R.id.buttonBack);
 
         Intent intentReceived = getIntent();
 
+        setTitle("Dumbbell Squeeze Press");
+
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(),chestexercises.class);
+                startActivity(intent);
+            }
+        });
 
         buttonStart.setOnClickListener(new View.OnClickListener() {
             @Override

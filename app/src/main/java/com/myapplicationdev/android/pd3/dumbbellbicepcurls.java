@@ -16,24 +16,30 @@ public class dumbbellbicepcurls extends AppCompatActivity {
     TextView tvTarget;
     TextView tvEquipments;
     TextView tvOnline;
-    Button buttonStart;
+    Button buttonStart, buttonBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dumbbellbicepcurls);
 
-
-
         tvTarget = findViewById(R.id.textViewTarget);
         tvBicep = findViewById(R.id.textViewBicep);
         tvEquipments = findViewById(R.id.textViewEquipments);
-        tvOnline = findViewById(R.id.textViewOnline);
         buttonStart = findViewById(R.id.buttonStart);
+        buttonBack = findViewById(R.id.buttonBack);
 
         Intent intentReceived = getIntent();
 
+        setTitle("Dumbbell Bicep Curls");
 
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    Intent intent = new Intent(getBaseContext(),bicepexercises.class);
+                startActivity(intent);
+            }
+        });
 
         buttonStart.setOnClickListener(new View.OnClickListener() {
             @Override
